@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/cam.css">
+  <title>Find Objects</title>
+
+</head>
+
+<body>
+
+  <button id="search-button" onclick="showSearchInput()">Find Objects <i class="fas fa-search"></i></button>
+
+  <input type="text" id="search-input" placeholder="Search for objects">
+
+  <video id="cameraFeed" width="1200" height="900" autoplay></video>
+
+  <script>
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function (stream) {
+        var videoElement = document.getElementById('cameraFeed');
+        videoElement.srcObject = stream;
+      })
+      .catch(function (error) {
+        console.error('Error accessing the camera:', error);
+      });
+  </script>
+
+  <button id="admin-button">
+    <link rel="sign.html">Go As Admin
+  </button>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>
+    function showSearchInput() {
+      var searchInput = document.getElementById("search-input");
+      searchInput.style.display = "inline-block";
+      document.getElementById("search-button").style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
